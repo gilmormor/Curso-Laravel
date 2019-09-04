@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('permiso/{nombre}/{slug?}', 'PermisoController@index');
+//Route::view('permiso', 'permiso');
+//Route::get('admin/sistema/permisos','PermisoController@index')->name('permiso');
+
+Route::get('permiso/{nombre}', function ($nombre) {
+    return $nombre;
+})->where('nombre', '[0-9]+');
