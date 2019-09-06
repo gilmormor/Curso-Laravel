@@ -3,6 +3,14 @@
     Menus    
 @endsection
 
+@section('styles')
+    <link href="{{asset("assets/js/jquery-nestable/jquery.nestable.css")}}">
+@endsection
+
+@section('scriptsPlugins')
+    <script src="{{asset("assets/js/jquery-nestable/jquery.nestable.js")}}"></script>
+@endsection
+
 @section('contenido')
     <div class="row">
         <div class="col-lg-12">

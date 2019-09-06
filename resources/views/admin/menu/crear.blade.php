@@ -15,7 +15,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('guardar-menu')}}" id="form-general" name="form-general" class="form-horizontal" method="POST">
+        <form action="{{route('guardar-menu')}}" id="form-general" name="form-general" class="form-horizontal" method="POST" autocomplete="off">
             @csrf
             <div class="box-body">
                 @include('admin.menu.form')
