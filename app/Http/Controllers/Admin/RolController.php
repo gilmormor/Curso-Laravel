@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class PermisoController extends Controller
+class RolController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($nombre,$slug = false)
+    public function index()
     {
-        return view('permiso',compact('nombre','slug'));
+        //
     }
 
     /**
@@ -23,7 +24,7 @@ class PermisoController extends Controller
      */
     public function create()
     {
-        return 'Sistema de Crear';
+        //
     }
 
     /**
