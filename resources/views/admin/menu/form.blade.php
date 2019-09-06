@@ -18,6 +18,9 @@
     <div class="col-lg-8">
       <input type="text"  id="icono" name="icono" class="form-control" value="{{old('icono')}}">
     </div>
+    <div class="col-lg-1">
+      <span id="mostrar-icono" name="mostrar-icono" class="fa fa-fw {{old("icono")}}"></span>
+    </div>
 </div>
 
     
