@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ValidacionRol;
+use App\Models\Admin\Rol;
 
 class RolController extends Controller
 {
@@ -14,7 +16,8 @@ class RolController extends Controller
      */
     public function index()
     {
-        //
+        $datas = Rol::orderBy('id')->get();
+        return view('admin.rol.index',compact('datas'));
     }
 
     /**
@@ -22,9 +25,9 @@ class RolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function crear()
     {
-        //
+        return view('admin.rol.crear');
     }
 
     /**
@@ -33,9 +36,10 @@ class RolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardar(ValidacionRol $request)
     {
-        //
+        Rol::create($request->all());
+        return redirect('admin/rol')->with('mensaje','Rol creado con exito');
     }
 
     /**
@@ -44,7 +48,7 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function mostrar($id)
     {
         //
     }
@@ -55,9 +59,10 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editar($id)
     {
-        //
+        $data = Rol::findOrFail($id);
+        return view('admin.rol.editar',compact('data'));
     }
 
     /**
@@ -67,9 +72,10 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function actualizar(ValidacionRol $request, $id)
     {
-        //
+        rol::findOrFail($id)->update($request->all());
+        return redirect('admin/rol')->with('mensaje','Rol actualizado con exito');
     }
 
     /**
@@ -78,8 +84,16 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function eliminar(Request $request, $id)
     {
-        //
+        if ($request->ajax()) {
+            if (Rol::destroy($id)) {
+                return response()->json(['mensaje' => 'ok']);
+            } else {
+                return response()->json(['mensaje' => 'ng']);
+            }
+        } else {
+            abort(404);
+        }
     }
 }

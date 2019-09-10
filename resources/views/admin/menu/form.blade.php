@@ -2,14 +2,14 @@
     <label for="nombre" class="col-lg-3 control-label requerido">Nombre</label>
 
     <div class="col-lg-8">
-    <input type="text"  id="nombre" name="nombre" class="form-control" value="{{old('nombre')}}">
+    <input type="text"  id="nombre" name="nombre" class="form-control" value="{{old('nombre')}}" required>
     </div>
 </div>
 <div class="form-group">
     <label for="url" class="col-lg-3 control-label requerido">URL</label>
 
     <div class="col-lg-8">
-      <input type="text"  id="url" name="url" class="form-control" value="{{old('url')}}">
+      <input type="text"  id="url" name="url" class="form-control" value="{{old('url')}}" required>
     </div>
 </div>
 <div class="form-group">

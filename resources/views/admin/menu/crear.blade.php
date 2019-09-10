@@ -4,7 +4,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset("assets/pages/scripts/admin/menu/crear.js")}}"></script>
+    <script src="{{asset("assets/pages/scripts/admin/crear.js")}}" type="text/javascript"></script>
 @endsection
 @section('contenido')
     @include('includes.form-error')
@@ -15,7 +15,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form action="{{route('guardar-menu')}}" id="form-general" name="form-general" class="form-horizontal" method="POST" autocomplete="off">
+        <form action="{{route('guardar_menu')}}" id="form-general" name="form-general" class="form-horizontal" method="POST" autocomplete="off">
             @csrf
             <div class="box-body">
                 @include('admin.menu.form')

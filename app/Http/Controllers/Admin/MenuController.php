@@ -16,9 +16,20 @@ class MenuController extends Controller
      */
     public function index()
     {
+        /*
         $menus = Menu::orderBy('id')->get();
         //return view('admin.permiso.index', ['permiso' => $permiso]); Asi se hace normalmente en laravel
         return view('admin.menu.index', compact('menus')); //Se usa compact() para evitar la sintaxis anterior 
+        */
+/*
+        $menus = Menu::getMenu();
+        return view('admin.menu.index',compact('menus'));
+*/
+        $menus = Menu::getMenu();
+        return view('admin.menu.index', compact('menus'));
+
+        //return view('admin.menu.indexx');
+        
     }
 
     /**
@@ -87,5 +98,16 @@ class MenuController extends Controller
     public function eliminar($id)
     {
         //
+    }
+
+    public function guardarOrden(Request $request)
+    {
+        if ($request->ajax()) {
+            $menu = new Menu;
+            $menu->guardarOrden($request->menu);
+            return response()->json(['respuesta' => 'ok']);
+        } else {
+            abort(404);
+        }
     }
 }
