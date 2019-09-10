@@ -11,6 +11,11 @@ class Menu extends Model
     protected $guarded = ['id']; //
     //public $timestamps = ""; //Esta linea no hace falta ya que la tabla si tien los campos timestamps fechas de update e insercion
 
+    public function roles()
+    {
+        return $this->belongsToMany(Rol::class, 'menu_rol');
+    }
+
     public function getHijos($padres, $line)
     {
         $children = [];
