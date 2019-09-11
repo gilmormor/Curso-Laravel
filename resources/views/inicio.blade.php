@@ -2,3 +2,4 @@
 @section('titulo')
     Plastiservi
 @endsection
+@include('includes.mensaje')

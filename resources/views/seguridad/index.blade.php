@@ -39,7 +39,7 @@
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       <div>
         @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
+          {{ $error }}
         @endforeach
       </div>
     </div>
