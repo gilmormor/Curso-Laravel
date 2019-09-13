@@ -4,7 +4,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset("assets/pages/scripts/admin/crear.js")}}" type="text/javascript"></script>
+    <script src="{{asset("assets/pages/scripts/admin/menu/crear.js")}}" type="text/javascript"></script>
 @endsection
 @section('contenido')
     @include('includes.form-error')
@@ -12,6 +12,10 @@
     <div class="box box-info">
         <div class="box-header with-border">
         <h3 class="box-title">Crear Menú</h3>
+        <div class="box-tools pull-right">
+            <a href="{{route('menu')}}" class="btn btn-block btn-info btn-sm">
+                <i class="fa fa-fw fa-reply-all"></i> Volver al listado
+            </a>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
