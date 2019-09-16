@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Permiso;
+use App\Models\Admin\Rol;
 
 class PermisoRolController extends Controller
 {
